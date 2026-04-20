@@ -10,9 +10,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./fonts/fonts.css">
 <link rel="stylesheet" href="./dist/tailwind.css">
 
 <style>
@@ -134,24 +132,25 @@
         <p class="eyebrow mb-4 stat-num">05</p>
         <h2 class="h2 text-[24px] md:text-[32px] mb-6">Hébergement du site</h2>
         <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
-          Le site <span style="color:var(--ink); font-weight:500">santalion.com</span> est hébergé par :
+          Le site <span style="color:var(--ink); font-weight:500">santalion.com</span> est hébergé par
+          GitHub Pages, service de GitHub, Inc. :
         </p>
         <ul class="space-y-0">
           <li class="dotted-b py-3 flex items-baseline justify-between gap-4 text-[14px]">
             <span class="ink-mute">Raison sociale</span>
-            <span class="todo">À COMPLÉTER : nom de l'hébergeur</span>
+            <span style="color:var(--ink)">GitHub, Inc.</span>
           </li>
           <li class="dotted-b py-3 flex items-baseline justify-between gap-4 text-[14px]">
             <span class="ink-mute">Adresse</span>
-            <span class="todo">À COMPLÉTER : adresse complète</span>
-          </li>
-          <li class="dotted-b py-3 flex items-baseline justify-between gap-4 text-[14px]">
-            <span class="ink-mute">Téléphone</span>
-            <span class="todo">À COMPLÉTER : téléphone</span>
+            <span style="color:var(--ink)">88 Colin P. Kelly Jr Street, San Francisco, CA 94107, USA</span>
           </li>
           <li class="dotted-b py-3 flex items-baseline justify-between gap-4 text-[14px]">
             <span class="ink-mute">Site web</span>
-            <span class="todo">À COMPLÉTER : URL</span>
+            <a href="https://pages.github.com" target="_blank" rel="noopener" class="mint hover:opacity-70">pages.github.com</a>
+          </li>
+          <li class="py-3 flex items-baseline justify-between gap-4 text-[14px]">
+            <span class="ink-mute">Transfert hors UE</span>
+            <span style="color:var(--ink)">Data Privacy Framework UE-US</span>
           </li>
         </ul>
       </article>
@@ -210,7 +209,7 @@
         <p class="eyebrow mb-4 stat-num">09</p>
         <h2 class="h2 text-[24px] md:text-[32px] mb-6">Crédits</h2>
         <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
-          Conception et réalisation du site : <span class="todo">À COMPLÉTER : nom du créateur / agence</span>.
+          Conception et réalisation du site : Ana Dejanovic.
         </p>
         <ul class="space-y-0">
           <li class="dotted-b py-3 flex items-baseline justify-between gap-4 text-[14px]">
@@ -219,7 +218,7 @@
           </li>
           <li class="dotted-b py-3 flex items-baseline justify-between gap-4 text-[14px]">
             <span class="ink-mute">Photographies & illustrations</span>
-            <span class="todo">À COMPLÉTER : sources ou « Tous droits réservés — Santalion »</span>
+            <span style="color:var(--ink)">Tous droits réservés — Santalion</span>
           </li>
           <li class="py-3 flex items-baseline justify-between gap-4 text-[14px]">
             <span class="ink-mute">Logo Santalion</span>
@@ -239,7 +238,7 @@
 
       <div class="pt-10 pb-4 dotted-t text-center">
         <p class="script text-[28px] mb-3">Santalion</p>
-        <p class="text-[13px] ink-mute">Dernière mise à jour : <span class="todo">À COMPLÉTER : date</span></p>
+        <p class="text-[13px] ink-mute">Dernière mise à jour : 21 avril 2026</p>
         <a href="./index.html" class="btn btn-ghost mt-6">← Retour à l'accueil</a>
       </div>
 
@@ -264,12 +263,31 @@
       <a href="./mentions-legales.html" class="hover:text-[color:var(--ink)]">Mentions légales</a>
       <a href="./cgv.html" class="hover:text-[color:var(--ink)]">CGV</a>
       <a href="./confidentialite.html" class="hover:text-[color:var(--ink)]">Confidentialité</a>
+      <a href="#" data-action="reopen-consent" class="hover:text-[color:var(--ink)]">Gérer mes préférences</a>
       <span class="md:ml-auto">Organisme de formation agréé · PSSM</span>
     </div>
   </div>
 </footer>
 
 <script src="./src/main.js" defer></script>
+
+
+<div id="consent-banner" class="consent-banner" hidden role="region" aria-labelledby="consent-title">
+  <div class="consent-inner">
+    <div class="consent-copy">
+      <p id="consent-title" class="consent-title">Contenus dynamiques externes</p>
+      <p class="consent-text">
+        Ce site peut charger des statistiques et références depuis Google Sheets. Votre acceptation
+        transmet votre adresse IP à Google (États-Unis). Si vous refusez, des valeurs de secours
+        s'affichent. <a href="./confidentialite.html">En savoir plus</a>.
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" data-consent="denied" class="btn btn-ghost consent-btn">Refuser</button>
+      <button type="button" data-consent="granted" class="btn btn-primary consent-btn">Accepter</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

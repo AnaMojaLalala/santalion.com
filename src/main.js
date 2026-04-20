@@ -131,12 +131,57 @@ function startCounters() {
   document.querySelectorAll('.stat').forEach(s => countIO.observe(s));
 }
 
-// Kick off sheet fetches in parallel. Counters wait on stats (or timeout) so
-// the animation uses fresh values when possible, hardcoded fallback otherwise.
-// Clients render independently — swaps in whenever it resolves.
-applyClients().catch(err => console.warn('Clients fetch failed, using fallback:', err.message));
+const CONSENT_KEY = 'santalion-consent';
 
-Promise.race([
-  applyStats().catch(err => console.warn('Stats fetch failed, using fallback:', err.message)),
-  timeout(FETCH_TIMEOUT_MS),
-]).then(startCounters);
+function getConsent() {
+  try { return localStorage.getItem(CONSENT_KEY); } catch (_) { return null; }
+}
+function setConsent(value) {
+  try { localStorage.setItem(CONSENT_KEY, value); } catch (_) {}
+}
+
+function showBanner() {
+  const b = document.getElementById('consent-banner');
+  if (b) b.hidden = false;
+}
+function hideBanner() {
+  const b = document.getElementById('consent-banner');
+  if (b) b.hidden = true;
+}
+
+function runSheetFetches() {
+  applyClients().catch(err => console.warn('Clients fetch failed, using fallback:', err.message));
+  applyStats().catch(err => console.warn('Stats fetch failed, using fallback:', err.message));
+}
+
+function initConsent() {
+  document.querySelectorAll('#consent-banner [data-consent]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const value = btn.getAttribute('data-consent');
+      setConsent(value);
+      hideBanner();
+      if (value === 'granted') runSheetFetches();
+    });
+  });
+  document.querySelectorAll('[data-action="reopen-consent"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      showBanner();
+    });
+  });
+}
+
+initConsent();
+
+const consent = getConsent();
+if (consent === 'granted') {
+  Promise.race([
+    applyStats().catch(err => console.warn('Stats fetch failed, using fallback:', err.message)),
+    timeout(FETCH_TIMEOUT_MS),
+  ]).then(startCounters);
+  applyClients().catch(err => console.warn('Clients fetch failed, using fallback:', err.message));
+} else {
+  // Denied or undecided — counters animate on the hardcoded fallback values immediately.
+  startCounters();
+  if (consent !== 'denied') showBanner();
+}

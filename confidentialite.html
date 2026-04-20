@@ -10,9 +10,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./fonts/fonts.css">
 <link rel="stylesheet" href="./dist/tailwind.css">
 
 <style>
@@ -149,9 +147,9 @@
         <ul class="space-y-0">
           <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>OPCO, dans le cadre des demandes de prise en charge de formation</li>
           <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Comptable et organismes de contrôle comptable ou fiscal</li>
-          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Hébergeur du site (voir <a href="./mentions-legales.html" class="mint hover:opacity-70">mentions légales</a>)</li>
-          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Google LLC — chargement des polices Google Fonts et affichage de données via Google Sheets</li>
-          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Google LLC — réservation de rendez-vous via Google Calendar / Google Bookings</li>
+          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>GitHub, Inc. — hébergement du site via GitHub Pages (voir <a href="./mentions-legales.html" class="mint hover:opacity-70">mentions légales</a>)</li>
+          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Google LLC — affichage de données dynamiques via Google Sheets, <span style="color:var(--ink); font-weight:500">uniquement après votre consentement</span></li>
+          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Google LLC — réservation de rendez-vous via Google Calendar / Google Bookings (déclenchée uniquement lorsque vous cliquez sur un lien de réservation)</li>
           <li class="py-3 text-[14px]"><span class="mint mr-2">✓</span><span class="todo">À COMPLÉTER : outil de visioconférence (Zoom, Google Meet…), mailing, etc.</span></li>
         </ul>
       </article>
@@ -160,13 +158,16 @@
         <p class="eyebrow mb-4 stat-num">06</p>
         <h2 class="h2 text-[24px] md:text-[32px] mb-6">Transferts hors Union européenne</h2>
         <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
-          Certains de nos sous-traitants (notamment Google LLC) sont susceptibles d'héberger ou de traiter des
-          données en dehors de l'Union européenne, en particulier aux États-Unis. Ces transferts sont encadrés
-          par les mécanismes prévus par le RGPD :
+          Le site est hébergé par GitHub, Inc. aux États-Unis (GitHub Pages) ; le chargement du site implique
+          donc un transfert d'informations techniques (adresse IP, requête HTTP) vers les États-Unis. D'autres
+          sous-traitants, comme Google LLC, peuvent également traiter des données hors UE.
+        </p>
+        <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
+          Ces transferts sont encadrés par les mécanismes prévus par le RGPD :
         </p>
         <ul class="space-y-0">
-          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Décision d'adéquation (EU-US Data Privacy Framework) lorsque le sous-traitant y est certifié</li>
-          <li class="py-3 text-[14px]"><span class="mint mr-2">✓</span>Clauses contractuelles types approuvées par la Commission européenne</li>
+          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span>Décision d'adéquation — Data Privacy Framework UE-États-Unis (GitHub, Inc. et Google LLC y sont certifiés)</li>
+          <li class="py-3 text-[14px]"><span class="mint mr-2">✓</span>Clauses contractuelles types approuvées par la Commission européenne, à défaut d'adéquation</li>
         </ul>
       </article>
 
@@ -218,21 +219,40 @@
 
       <article class="py-10 md:py-14" style="border-top:1px dotted var(--rule-dotted)">
         <p class="eyebrow mb-4 stat-num">09</p>
-        <h2 class="h2 text-[24px] md:text-[32px] mb-6">Cookies et traceurs</h2>
+        <h2 class="h2 text-[24px] md:text-[32px] mb-6">Cookies, stockage local et traceurs</h2>
         <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
           Le site <span style="color:var(--ink); font-weight:500">santalion.com</span> n'utilise aucun cookie
-          de mesure d'audience, de profilage ou de publicité.
+          de mesure d'audience, de profilage ou de publicité, et ne dépose aucun cookie identifiant.
         </p>
         <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
-          Le site charge des ressources externes susceptibles de transmettre votre adresse IP à leurs éditeurs :
+          Un unique élément de stockage local (<code style="color:var(--ink);font-family:monospace">localStorage</code>)
+          est utilisé pour mémoriser votre choix concernant le chargement de contenus dynamiques
+          (voir ci-dessous). Il est essentiel au respect de votre préférence et ne nécessite pas de consentement
+          préalable.
+        </p>
+        <h3 class="eyebrow mb-3 mt-6" style="color:var(--ink)">Contenus dynamiques soumis à consentement</h3>
+        <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
+          Certaines sections du site (statistiques, liste de références) peuvent être chargées à la volée depuis
+          Google Sheets. Ce chargement transmet votre adresse IP à Google LLC aux États-Unis.
+          Il est désactivé par défaut — une bannière vous propose d'accepter ou de refuser. En cas de refus
+          ou d'absence de choix, des valeurs de secours statiques s'affichent. Vous pouvez modifier votre choix
+          à tout moment via le lien <span style="color:var(--ink); font-weight:500">« Gérer mes préférences »</span>
+          dans le pied de page.
+        </p>
+        <h3 class="eyebrow mb-3 mt-6" style="color:var(--ink)">Ressources chargées sans consentement</h3>
+        <p class="text-[15px] leading-[1.75] ink-soft mb-4 font-light">
+          Les éléments suivants sont chargés directement depuis notre serveur, sans appel à un tiers :
         </p>
         <ul class="space-y-0">
-          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span><span style="color:var(--ink); font-weight:500">Google Fonts</span> — polices typographiques (Montserrat, Sacramento)</li>
-          <li class="py-3 text-[14px]"><span class="mint mr-2">✓</span><span style="color:var(--ink); font-weight:500">Google Sheets</span> — chargement de données publiques (chiffres et références)</li>
+          <li class="dotted-b py-3 text-[14px]"><span class="mint mr-2">✓</span><span style="color:var(--ink); font-weight:500">Polices typographiques</span> — Montserrat et Sacramento, auto-hébergées (pas d'appel à Google Fonts)</li>
+          <li class="py-3 text-[14px]"><span class="mint mr-2">✓</span><span style="color:var(--ink); font-weight:500">Scripts, styles et images</span> — servis par notre hébergeur GitHub Pages</li>
         </ul>
-        <p class="text-[15px] leading-[1.75] ink-soft mt-6 font-light">
-          Ces ressources sont chargées automatiquement et ne déposent pas de cookies identifiants sur votre
-          appareil.
+        <h3 class="eyebrow mb-3 mt-6" style="color:var(--ink)">Ressources chargées sur action explicite</h3>
+        <p class="text-[15px] leading-[1.75] ink-soft font-light">
+          Lorsque vous cliquez sur un lien de réservation, vous êtes redirigé·e vers Google Calendar
+          (<code style="color:var(--ink);font-family:monospace">calendar.app.google</code>).
+          Cette redirection relève de votre action volontaire et est soumise à la politique de confidentialité
+          de Google.
         </p>
       </article>
 
@@ -281,7 +301,7 @@
 
       <div class="pt-10 pb-4 dotted-t text-center">
         <p class="script text-[28px] mb-3">Santalion</p>
-        <p class="text-[13px] ink-mute">Dernière mise à jour : <span class="todo">À COMPLÉTER : date</span></p>
+        <p class="text-[13px] ink-mute">Dernière mise à jour : 21 avril 2026</p>
         <a href="./index.html" class="btn btn-ghost mt-6">← Retour à l'accueil</a>
       </div>
 
@@ -306,12 +326,31 @@
       <a href="./mentions-legales.html" class="hover:text-[color:var(--ink)]">Mentions légales</a>
       <a href="./cgv.html" class="hover:text-[color:var(--ink)]">CGV</a>
       <a href="./confidentialite.html" class="hover:text-[color:var(--ink)]">Confidentialité</a>
+      <a href="#" data-action="reopen-consent" class="hover:text-[color:var(--ink)]">Gérer mes préférences</a>
       <span class="md:ml-auto">Organisme de formation agréé · PSSM</span>
     </div>
   </div>
 </footer>
 
 <script src="./src/main.js" defer></script>
+
+
+<div id="consent-banner" class="consent-banner" hidden role="region" aria-labelledby="consent-title">
+  <div class="consent-inner">
+    <div class="consent-copy">
+      <p id="consent-title" class="consent-title">Contenus dynamiques externes</p>
+      <p class="consent-text">
+        Ce site peut charger des statistiques et références depuis Google Sheets. Votre acceptation
+        transmet votre adresse IP à Google (États-Unis). Si vous refusez, des valeurs de secours
+        s'affichent. <a href="./confidentialite.html">En savoir plus</a>.
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" data-consent="denied" class="btn btn-ghost consent-btn">Refuser</button>
+      <button type="button" data-consent="granted" class="btn btn-primary consent-btn">Accepter</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

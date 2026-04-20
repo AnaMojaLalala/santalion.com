@@ -10,9 +10,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./fonts/fonts.css">
 <link rel="stylesheet" href="./dist/tailwind.css">
 </head>
 <body>
@@ -70,7 +68,7 @@
         Sessions inter-entreprises ou intra sur mesure.
       </p>
       <ul class="space-y-0">
-        <li class="dotted-b py-3.5 flex items-baseline justify-between gap-4 text-[14px]"><span><span class="mint mr-2">✓</span> Présentiel — 14 h sur 4 demi-journées</span></li>
+        <li class="dotted-b py-3.5 flex items-baseline justify-between gap-4 text-[14px]"><span><span class="mint mr-2">✓</span> Présentiel — 14 h sur 2 journées</span></li>
         <li class="dotted-b py-3.5 flex items-baseline justify-between gap-4 text-[14px]"><span><span class="mint mr-2">✓</span> Distanciel — 7 modules de 2 h</span></li>
         <li class="dotted-b py-3.5 flex items-baseline justify-between gap-4 text-[14px]"><span><span class="mint mr-2">✓</span> Modules standard, jeune et initiation</span></li>
         <li class="py-3.5 flex items-baseline justify-between gap-4 text-[14px]"><span><span class="mint mr-2">✓</span> Financement OPCO possible</span></li>
@@ -112,7 +110,7 @@
       <div class="flex flex-wrap items-baseline justify-between mb-5 pb-3 gap-x-4 gap-y-2" style="border-bottom: 1px solid var(--ink)">
         <div class="flex flex-wrap items-baseline gap-x-4 sm:gap-x-5 gap-y-1">
           <span class="eyebrow" style="color:var(--ink)">Présentiel</span>
-          <span class="text-[13px] ink-mute">4 demi-journées</span>
+          <span class="text-[13px] ink-mute">2 journées</span>
         </div>
         <span class="stat-num text-[24px]">14&nbsp;h</span>
       </div>
@@ -139,7 +137,7 @@
             <p class="text-[16px]" style="color:var(--ink)">Initiation à la santé mentale</p>
             <p class="ink-mute text-[13px] mt-1 font-light hide-sm">Format court — sensibilisation d'une équipe entière</p>
           </div>
-          <span class="text-[13px] ink-mute hide-sm">½ journée</span>
+          <span class="text-[13px] ink-mute hide-sm">2 journées</span>
           <a href="https://calendar.app.google/iwGPBJ9Ezh6nxj3J7" target="_blank" rel="noopener" class="text-[13px] mint hover:opacity-70 shrink-0">Réserver →</a>
         </div>
       </div>
@@ -272,10 +270,6 @@
 
     <div class="grid md:grid-cols-3 gap-5">
       <article class="p-6 sm:p-8 flex flex-col" style="background: var(--bg); border: 1px solid var(--rule)">
-        <div class="flex items-baseline justify-between mb-6 pb-3 dotted-b gap-3">
-          <span class="eyebrow" style="color:var(--ink)">Format court</span>
-          <span class="text-[12px] ink-mute">½ journée</span>
-        </div>
         <h3 class="h3 text-[20px] md:text-[24px] mb-4">
           Initiation à la<br/>
           <span class="script text-[28px] md:text-[34px]" style="letter-spacing:0">santé mentale.</span>
@@ -289,10 +283,6 @@
       </article>
 
       <article class="p-6 sm:p-8 flex flex-col" style="background: var(--bg); border: 1px solid var(--rule)">
-        <div class="flex items-baseline justify-between mb-6 pb-3 dotted-b gap-3">
-          <span class="eyebrow" style="color:var(--ink)">Cursus complet</span>
-          <span class="text-[12px] ink-mute">14 h · 4 demi-journées</span>
-        </div>
         <h3 class="h3 text-[20px] md:text-[24px] mb-4">
           PSSM<br/>
           <span class="script text-[28px] md:text-[34px]" style="letter-spacing:0">standard.</span>
@@ -306,10 +296,6 @@
       </article>
 
       <article class="p-6 sm:p-8 flex flex-col" style="background: var(--bg); border: 1px solid var(--rule)">
-        <div class="flex items-baseline justify-between mb-6 pb-3 dotted-b gap-3">
-          <span class="eyebrow" style="color:var(--ink)">12 – 25 ans</span>
-          <span class="text-[12px] ink-mute">14 h · 4 demi-journées</span>
-        </div>
         <h3 class="h3 text-[20px] md:text-[24px] mb-4">
           PSSM<br/>
           <span class="script text-[28px] md:text-[34px]" style="letter-spacing:0">jeune.</span>
@@ -352,12 +338,31 @@
       <a href="./mentions-legales.html" class="hover:text-[color:var(--ink)]">Mentions légales</a>
       <a href="./cgv.html" class="hover:text-[color:var(--ink)]">CGV</a>
       <a href="./confidentialite.html" class="hover:text-[color:var(--ink)]">Confidentialité</a>
+      <a href="#" data-action="reopen-consent" class="hover:text-[color:var(--ink)]">Gérer mes préférences</a>
       <span class="md:ml-auto">Organisme de formation agréé · PSSM</span>
     </div>
   </div>
 </footer>
 
 <script src="./src/main.js" defer></script>
+
+
+<div id="consent-banner" class="consent-banner" hidden role="region" aria-labelledby="consent-title">
+  <div class="consent-inner">
+    <div class="consent-copy">
+      <p id="consent-title" class="consent-title">Contenus dynamiques externes</p>
+      <p class="consent-text">
+        Ce site peut charger des statistiques et références depuis Google Sheets. Votre acceptation
+        transmet votre adresse IP à Google (États-Unis). Si vous refusez, des valeurs de secours
+        s'affichent. <a href="./confidentialite.html">En savoir plus</a>.
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" data-consent="denied" class="btn btn-ghost consent-btn">Refuser</button>
+      <button type="button" data-consent="granted" class="btn btn-primary consent-btn">Accepter</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
