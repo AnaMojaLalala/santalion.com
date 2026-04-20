@@ -670,6 +670,10 @@ video {
   width: 1.75rem;
 }
 
+.min-w-0 {
+  min-width: 0px;
+}
+
 .max-w-\[460px\] {
   max-width: 460px;
 }
@@ -808,6 +812,10 @@ video {
 
 .self-start {
   align-self: flex-start;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .border {
@@ -1456,9 +1464,9 @@ section {
     padding: 2.5rem;
   }
 
-  .md\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:py-14 {
@@ -1529,6 +1537,10 @@ section {
     font-size: 44px;
   }
 
+  .md\:text-\[48px\] {
+    font-size: 48px;
+  }
+
   .md\:text-\[52px\] {
     font-size: 52px;
   }
@@ -1545,10 +1557,6 @@ section {
     font-size: 60px;
   }
 
-  .md\:text-\[64px\] {
-    font-size: 64px;
-  }
-
   .md\:text-\[68px\] {
     font-size: 68px;
   }
@@ -1563,5 +1571,16 @@ section {
 
   .md\:text-\[92px\] {
     font-size: 92px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .lg\:text-\[64px\] {
+    font-size: 64px;
   }
 }
