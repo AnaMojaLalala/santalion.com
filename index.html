@@ -6,117 +6,17 @@
 <title>Santalion — Formation Premier Secours en Santé Mentale</title>
 <meta name="description" content="Santalion — Organisme de formation aux Premiers Secours en Santé Mentale (PSSM) depuis 2022." />
 
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --bg:        #FFFFFF;
-    --bg-soft:   #F7FAF9;
-    --ink:       #2A2F33;
-    --ink-soft:  #5A6168;
-    --ink-mute:  #9AA0A6;
-    --rule:      #E2E6E8;
-    --rule-dotted: #B8BFC4;
-    --mint:      #4DD4B8;
-    --mint-deep: #2FB598;
-    --mint-soft: #E8F8F4;
-
-    --sans:   "Montserrat", system-ui, -apple-system, sans-serif;
-    --script: "Sacramento", cursive;
-  }
-
-  html, body { background: var(--bg); color: var(--ink); }
-  body {
-    font-family: var(--sans);
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    font-feature-settings: "kern";
-  }
-
-  .script {
-    font-family: var(--script);
-    color: var(--mint);
-    font-weight: 400;
-  }
-
-  .ink-soft { color: var(--ink-soft); }
-  .ink-mute { color: var(--ink-mute); }
-  .mint { color: var(--mint); }
-
-  .eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-
-  .dotted {
-    border: none;
-    border-top: 1px dotted var(--rule-dotted);
-  }
-  .dotted-b { border-bottom: 1px dotted var(--rule-dotted); }
-  .dotted-t { border-top: 1px dotted var(--rule-dotted); }
-
-  .rule-b { border-bottom: 1px solid var(--rule); }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 22px; border-radius: 999px;
-    font-size: 13px; font-weight: 500;
-    letter-spacing: 0.02em;
-    transition: all .18s ease;
-    cursor: pointer; border: 1px solid transparent; white-space: nowrap;
-  }
-  .btn-primary { background: var(--mint); color: #0F2E27; }
-  .btn-primary:hover { background: var(--mint-deep); color: #fff; }
-  .btn-ghost { color: var(--ink); border-color: var(--rule-dotted); background: transparent; }
-  .btn-ghost:hover { border-color: var(--ink); }
-
-  section { scroll-margin-top: 80px; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  @media (min-width: 768px) { .wrap { padding: 0 40px; } }
-  .wrap-narrow { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-
-  .nav-shell { transition: background .2s, border-color .2s; border-bottom: 1px dotted transparent; }
-  .nav-shell.is-scrolled {
-    background: color-mix(in oklab, var(--bg) 92%, transparent);
-    border-bottom-color: var(--rule-dotted);
-    backdrop-filter: blur(10px);
-  }
-
-  :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
-
-  .h1 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
-  .h2 { font-weight: 500; letter-spacing: -0.015em; line-height: 1.15; }
-  .h3 { font-weight: 500; letter-spacing: -0.01em; line-height: 1.25; }
-
-  .stat-num { font-variant-numeric: tabular-nums; font-weight: 300; letter-spacing: -0.02em; }
-
-  .reveal { opacity: 0; transform: translateY(8px); transition: opacity .7s, transform .7s; }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-
-  .data-row {
-    display: grid; grid-template-columns: 1fr auto auto;
-    padding: 14px 0;
-    border-bottom: 1px dotted var(--rule-dotted);
-    gap: 16px; align-items: baseline;
-  }
-  @media (max-width: 640px) {
-    .data-row { grid-template-columns: 1fr auto; }
-    .data-row .hide-sm { display: none; }
-  }
-</style>
+<link rel="stylesheet" href="./dist/tailwind.css">
 </head>
 <body>
 
 <header id="nav" class="nav-shell fixed top-0 left-0 right-0 z-50">
-  <div class="wrap flex items-center justify-between h-[68px]">
-    <a href="#top" aria-label="Santalion" class="flex items-baseline">
-      <span class="script text-[36px] leading-none relative" style="top:2px">Santalion</span>
+  <div class="wrap flex items-center justify-between h-[64px] md:h-[68px] gap-3">
+    <a href="#top" aria-label="Santalion" class="flex items-baseline shrink-0">
+      <span class="script text-[30px] sm:text-[36px] leading-none relative" style="top:2px">Santalion</span>
     </a>
     <nav class="hidden md:flex items-center gap-9 text-[13px]" style="color:var(--ink-soft)">
       <a href="#formations" class="hover:text-[color:var(--ink)]">Formations</a>
@@ -124,29 +24,29 @@
       <a href="#references" class="hover:text-[color:var(--ink)]">Références</a>
       <a href="#contact" class="hover:text-[color:var(--ink)]">Contact</a>
     </nav>
-    <a href="#contact" class="btn btn-primary text-[12px] px-4 py-[9px]">Réserver 30 min</a>
+    <a href="https://calendar.app.google/yWjMcs3CYw3Bxa8e6" target="_blank" rel="noopener" class="btn btn-primary text-[11px] sm:text-[12px] px-3 sm:px-4 py-[8px] sm:py-[9px]">Réserver 30 min</a>
   </div>
 </header>
 
 <a id="top"></a>
 
-<section class="pt-[140px] md:pt-[180px] pb-24 md:pb-32">
+<section class="pt-[120px] sm:pt-[140px] md:pt-[180px] pb-20 md:pb-32">
   <div class="wrap">
-    <div class="mb-8">
+    <div class="mb-8 flex flex-wrap gap-x-4 gap-y-2">
       <span class="eyebrow">Premier Secours en Santé Mentale</span>
-      <span class="eyebrow" style="color:var(--mint-deep); margin-left: 14px;">Depuis 2022</span>
+      <span class="eyebrow" style="color:var(--mint-deep);">Depuis 2022</span>
     </div>
-    <h1 class="h1 text-[40px] sm:text-[56px] md:text-[68px] max-w-[900px]">
+    <h1 class="h1 text-[32px] sm:text-[48px] md:text-[68px] max-w-[900px]">
       Former à la santé mentale,<br/>
-      <span class="script text-[56px] sm:text-[72px] md:text-[92px]" style="letter-spacing: 0">avec délicatesse</span>
+      <span class="script text-[44px] sm:text-[64px] md:text-[92px]" style="letter-spacing: 0">avec délicatesse</span>
       <span class="inline-block" style="transform: translateY(-4px)">.</span>
     </h1>
-    <p class="mt-10 text-[17px] md:text-[18px] leading-[1.7] ink-soft max-w-[620px] font-light">
+    <p class="mt-8 md:mt-10 text-[15px] sm:text-[17px] md:text-[18px] leading-[1.7] ink-soft max-w-[620px] font-light">
       Santalion est un organisme de formation aux <span style="color:var(--ink); font-weight:500">Premiers Secours en Santé Mentale</span>.
       Des formations accessibles, humaines et concrètes — pour repérer, écouter et orienter.
     </p>
     <div class="mt-10 flex flex-wrap gap-3">
-      <a href="#contact" class="btn btn-primary">Réserver une conversation de 30 min</a>
+      <a href="https://calendar.app.google/yWjMcs3CYw3Bxa8e6" target="_blank" rel="noopener" class="btn btn-primary">Réserver une conversation de 30 min</a>
       <a href="#formations" class="btn btn-ghost">Découvrir les formations</a>
     </div>
   </div>
@@ -157,9 +57,9 @@
 
     <div>
       <p class="eyebrow mb-5">01 — Formations PSSM</p>
-      <h2 class="h2 text-[30px] md:text-[38px] mb-5">
+      <h2 class="h2 text-[24px] sm:text-[30px] md:text-[38px] mb-5">
         Le référentiel PSSM France,<br/>
-        <span class="script text-[42px] md:text-[54px]" style="letter-spacing: 0">porté par des formateurs de terrain.</span>
+        <span class="script text-[32px] sm:text-[42px] md:text-[54px]" style="letter-spacing: 0">porté par des formateurs de terrain.</span>
       </h2>
       <p class="ink-soft text-[15px] leading-[1.7] mb-8 max-w-[460px] font-light">
         Pour entreprises, collectivités, établissements scolaires et associations.
@@ -175,9 +75,9 @@
 
     <div>
       <p class="eyebrow mb-5">02 — Accompagnement</p>
-      <h2 class="h2 text-[30px] md:text-[38px] mb-5">
+      <h2 class="h2 text-[24px] sm:text-[30px] md:text-[38px] mb-5">
         Prévention,<br/>
-        <span class="script text-[42px] md:text-[54px]" style="letter-spacing: 0">sensibilisation, soutien.</span>
+        <span class="script text-[32px] sm:text-[42px] md:text-[54px]" style="letter-spacing: 0">sensibilisation, soutien.</span>
       </h2>
       <p class="ink-soft text-[15px] leading-[1.7] mb-8 max-w-[460px] font-light">
         Au-delà de la formation PSSM, nous accompagnons les équipes dans leur démarche globale
@@ -198,15 +98,15 @@
   <div class="wrap">
     <div class="max-w-[620px] mb-14">
       <p class="eyebrow mb-4">Nos formations</p>
-      <h2 class="h2 text-[32px] md:text-[44px]">
+      <h2 class="h2 text-[26px] sm:text-[32px] md:text-[44px]">
         Deux formats,<br/>
-        <span class="script text-[44px] md:text-[58px]" style="letter-spacing:0">un même référentiel.</span>
+        <span class="script text-[34px] sm:text-[44px] md:text-[58px]" style="letter-spacing:0">un même référentiel.</span>
       </h2>
     </div>
 
     <div class="mb-14">
-      <div class="flex items-baseline justify-between mb-5 pb-3" style="border-bottom: 1px solid var(--ink)">
-        <div class="flex items-baseline gap-5">
+      <div class="flex flex-wrap items-baseline justify-between mb-5 pb-3 gap-x-4 gap-y-2" style="border-bottom: 1px solid var(--ink)">
+        <div class="flex flex-wrap items-baseline gap-x-4 sm:gap-x-5 gap-y-1">
           <span class="eyebrow" style="color:var(--ink)">Présentiel</span>
           <span class="text-[13px] ink-mute">4 demi-journées</span>
         </div>
@@ -220,7 +120,7 @@
             <p class="ink-mute text-[13px] mt-1 font-light hide-sm">Adultes — cursus PSSM complet (dépression, anxiété, crise suicidaire, psychose, addictions)</p>
           </div>
           <span class="text-[13px] ink-mute hide-sm">Inter / Intra</span>
-          <a href="#contact" class="text-[13px] mint hover:opacity-70 shrink-0">Demander →</a>
+          <a href="https://calendar.app.google/TpedDq7Jvo2M9CZv5" target="_blank" rel="noopener" class="text-[13px] mint hover:opacity-70 shrink-0">Réserver →</a>
         </div>
         <div class="data-row">
           <div>
@@ -228,7 +128,7 @@
             <p class="ink-mute text-[13px] mt-1 font-light hide-sm">12 – 25 ans — pédagogie adaptée aux réalités scolaires et numériques</p>
           </div>
           <span class="text-[13px] ink-mute hide-sm">Intra</span>
-          <a href="#contact" class="text-[13px] mint hover:opacity-70 shrink-0">Demander →</a>
+          <a href="https://calendar.app.google/M2p1a43nTGSeqzR56" target="_blank" rel="noopener" class="text-[13px] mint hover:opacity-70 shrink-0">Réserver →</a>
         </div>
         <div class="data-row">
           <div>
@@ -236,18 +136,18 @@
             <p class="ink-mute text-[13px] mt-1 font-light hide-sm">Format court — sensibilisation d'une équipe entière</p>
           </div>
           <span class="text-[13px] ink-mute hide-sm">½ journée</span>
-          <a href="#contact" class="text-[13px] mint hover:opacity-70 shrink-0">Demander →</a>
+          <a href="https://calendar.app.google/iwGPBJ9Ezh6nxj3J7" target="_blank" rel="noopener" class="text-[13px] mint hover:opacity-70 shrink-0">Réserver →</a>
         </div>
       </div>
     </div>
 
     <div>
-      <div class="flex items-baseline justify-between mb-5 pb-3" style="border-bottom: 1px solid var(--ink)">
-        <div class="flex items-baseline gap-5">
+      <div class="flex flex-wrap items-baseline justify-between mb-5 pb-3 gap-x-4 gap-y-2" style="border-bottom: 1px solid var(--ink)">
+        <div class="flex flex-wrap items-baseline gap-x-4 sm:gap-x-5 gap-y-1">
           <span class="eyebrow" style="color:var(--ink)">Distanciel</span>
           <span class="text-[13px] ink-mute">en ligne · rythme souple</span>
         </div>
-        <span class="stat-num text-[24px]">7 × 2&nbsp;h</span>
+        <span class="stat-num text-[24px]">7&nbsp;×&nbsp;2&nbsp;h</span>
       </div>
 
       <ol class="grid sm:grid-cols-2 gap-x-10">
@@ -267,28 +167,28 @@
   <div class="wrap">
     <div class="max-w-[620px] mb-16">
       <p class="eyebrow mb-4">Chiffres clés</p>
-      <h2 class="h2 text-[32px] md:text-[44px]">
+      <h2 class="h2 text-[26px] sm:text-[32px] md:text-[44px]">
         Quatre ans de terrain,<br/>
-        <span class="script text-[44px] md:text-[58px]" style="letter-spacing:0">des milliers de conversations.</span>
+        <span class="script text-[34px] sm:text-[44px] md:text-[58px]" style="letter-spacing:0">des milliers de conversations.</span>
       </h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4">
-      <div class="stat py-6 px-4 md:px-6 md:border-r dotted-b md:dotted-b-0" style="border-color: var(--rule-dotted); border-style: dotted" data-target="1901">
-        <p class="stat-num text-[52px] md:text-[64px]" data-counter>0</p>
-        <p class="text-[13px] ink-mute mt-2 font-light">Stagiaires formés depuis 2022</p>
+      <div class="stat py-6 px-3 sm:px-4 md:px-6 md:border-r dotted-b md:dotted-b-0" style="border-color: var(--rule-dotted); border-style: dotted" data-stat-id="stagiaires" data-target="1901">
+        <p class="stat-num text-[40px] sm:text-[52px] md:text-[64px]" data-counter>0</p>
+        <p class="text-[12px] sm:text-[13px] ink-mute mt-2 font-light" data-stat-label>Stagiaires formés depuis 2022</p>
       </div>
-      <div class="stat py-6 px-4 md:px-6 md:border-r dotted-b md:dotted-b-0" style="border-color: var(--rule-dotted); border-style: dotted" data-target="170">
-        <p class="stat-num text-[52px] md:text-[64px]" data-counter>0</p>
-        <p class="text-[13px] ink-mute mt-2 font-light">Sessions animées</p>
+      <div class="stat py-6 px-3 sm:px-4 md:px-6 md:border-r dotted-b md:dotted-b-0" style="border-color: var(--rule-dotted); border-style: dotted" data-stat-id="sessions" data-target="170">
+        <p class="stat-num text-[40px] sm:text-[52px] md:text-[64px]" data-counter>0</p>
+        <p class="text-[12px] sm:text-[13px] ink-mute mt-2 font-light" data-stat-label>Sessions animées</p>
       </div>
-      <div class="stat py-6 px-4 md:px-6 md:border-r" style="border-color: var(--rule-dotted); border-style: dotted" data-target="4">
-        <p class="stat-num text-[52px] md:text-[64px]"><span data-counter>0</span><span class="ink-mute text-[28px] ml-1">ans</span></p>
-        <p class="text-[13px] ink-mute mt-2 font-light">d'expérience</p>
+      <div class="stat py-6 px-3 sm:px-4 md:px-6 md:border-r" style="border-color: var(--rule-dotted); border-style: dotted" data-stat-id="experience" data-target="4">
+        <p class="stat-num text-[40px] sm:text-[52px] md:text-[64px]"><span data-counter>0</span><span class="ink-mute text-[22px] sm:text-[28px] ml-1" data-stat-suffix>ans</span></p>
+        <p class="text-[12px] sm:text-[13px] ink-mute mt-2 font-light" data-stat-label>d'expérience</p>
       </div>
-      <div class="stat py-6 px-4 md:px-6" data-target="5">
-        <p class="stat-num text-[52px] md:text-[64px]" data-counter>0</p>
-        <p class="text-[13px] ink-mute mt-2 font-light">Organismes de référencement</p>
+      <div class="stat py-6 px-3 sm:px-4 md:px-6" data-stat-id="references" data-target="5">
+        <p class="stat-num text-[40px] sm:text-[52px] md:text-[64px]" data-counter>0</p>
+        <p class="text-[12px] sm:text-[13px] ink-mute mt-2 font-light" data-stat-label>Organismes de référencement</p>
       </div>
     </div>
   </div>
@@ -299,8 +199,8 @@
 
     <div class="mb-16">
       <p class="eyebrow mb-4">Référencements</p>
-      <h2 class="h2 text-[26px] md:text-[32px] mb-8 max-w-[600px]">
-        Agréés et référencés par les acteurs de la <span class="script text-[36px] md:text-[44px]" style="letter-spacing:0">santé mentale</span>.
+      <h2 class="h2 text-[22px] sm:text-[26px] md:text-[32px] mb-8 max-w-[600px]">
+        Agréés et référencés par les acteurs de la <span class="script text-[30px] sm:text-[36px] md:text-[44px]" style="letter-spacing:0">santé mentale</span>.
       </h2>
       <ul class="flex flex-wrap gap-x-6 gap-y-3 text-[14px]" style="color:var(--ink-soft)">
         <li>INFIPP</li><li class="ink-mute">·</li>
@@ -313,17 +213,17 @@
 
     <div>
       <p class="eyebrow mb-4">Ils nous ont fait confiance</p>
-      <h2 class="h2 text-[26px] md:text-[32px] mb-8 max-w-[600px]">
-        De la collectivité à la <span class="script text-[36px] md:text-[44px]" style="letter-spacing:0">grande école</span>.
+      <h2 class="h2 text-[22px] sm:text-[26px] md:text-[32px] mb-8 max-w-[600px]">
+        De la collectivité à la <span class="script text-[30px] sm:text-[36px] md:text-[44px]" style="letter-spacing:0">grande école</span>.
       </h2>
-      <ul class="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-8 text-[14px]" style="color:var(--ink-soft)">
+      <ul id="clients-list" class="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-8 text-[14px]" style="color:var(--ink-soft)">
         <li class="dotted-b pb-3">Agglomération Grand Paris Sud</li>
         <li class="dotted-b pb-3">Scouts du 77</li>
         <li class="dotted-b pb-3">LifeScan</li>
         <li class="dotted-b pb-3">Cité Éducative Paris 19</li>
         <li class="dotted-b pb-3">Cité Éducative Argenteuil</li>
         <li class="dotted-b pb-3">Institut Français de la Mode</li>
-        <li class="pb-3">AMET Santé au Travail</li>
+        <li class="dotted-b pb-3">AMET Santé au Travail</li>
       </ul>
     </div>
 
@@ -334,44 +234,86 @@
   <div class="wrap">
     <div class="max-w-[680px] mb-14">
       <p class="eyebrow mb-4">Prendre contact</p>
-      <h2 class="h2 text-[36px] md:text-[52px]">
-        Commençons par une <span class="script text-[50px] md:text-[70px]" style="letter-spacing:0">conversation</span>.
+      <h2 class="h2 text-[28px] sm:text-[36px] md:text-[52px]">
+        Commençons par une <span class="script text-[38px] sm:text-[50px] md:text-[70px]" style="letter-spacing:0">conversation</span>.
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-5">
-      <article class="p-8 md:p-10" style="background: var(--bg); border: 1px solid var(--rule)">
-        <div class="flex items-baseline justify-between mb-6 pb-3 dotted-b">
-          <span class="eyebrow" style="color:var(--ink)">Option 01</span>
-          <span class="text-[12px] ink-mute">30 min · gratuit</span>
+    <article class="p-6 sm:p-8 md:p-10 mb-10 md:mb-12" style="background: var(--mint-soft); border: 1px solid var(--mint)">
+      <div class="flex items-baseline justify-between mb-6 pb-3 gap-3" style="border-bottom: 1px dotted var(--mint-deep)">
+        <span class="eyebrow" style="color: var(--mint-deep)">Premier contact</span>
+        <span class="text-[12px]" style="color: var(--mint-deep)">30 min · gratuit</span>
+      </div>
+      <div class="md:grid md:grid-cols-[1fr_auto] md:gap-8 md:items-end">
+        <div>
+          <h3 class="h3 text-[26px] sm:text-[30px] md:text-[36px] mb-4">
+            Conversation avec<br/>
+            <span class="script text-[40px] sm:text-[48px] md:text-[58px]" style="letter-spacing:0">Ana.</span>
+          </h3>
+          <p class="ink-soft text-[14px] leading-[1.7] mb-6 md:mb-0 font-light max-w-[520px]">
+            Un premier échange en visio pour comprendre votre contexte, vos objectifs
+            et identifier le format le plus adapté. Aucun engagement.
+          </p>
         </div>
-        <h3 class="h3 text-[26px] md:text-[30px] mb-4">
-          Conversation<br/>
-          <span class="script text-[36px] md:text-[46px]" style="letter-spacing:0">découverte.</span>
+        <a href="https://calendar.app.google/yWjMcs3CYw3Bxa8e6" target="_blank" rel="noopener" class="btn btn-primary shrink-0">
+          Réserver 30 min →
+        </a>
+      </div>
+    </article>
+
+    <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 mb-6">
+      <p class="eyebrow" style="color:var(--ink)">Ou réservez directement une formation</p>
+      <span class="text-[12px] ink-mute">3 parcours · inter-entreprises</span>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="p-6 sm:p-8 flex flex-col" style="background: var(--bg); border: 1px solid var(--rule)">
+        <div class="flex items-baseline justify-between mb-6 pb-3 dotted-b gap-3">
+          <span class="eyebrow" style="color:var(--ink)">Format court</span>
+          <span class="text-[12px] ink-mute">½ journée</span>
+        </div>
+        <h3 class="h3 text-[20px] md:text-[24px] mb-4">
+          Initiation à la<br/>
+          <span class="script text-[28px] md:text-[34px]" style="letter-spacing:0">santé mentale.</span>
         </h3>
-        <p class="ink-soft text-[14px] leading-[1.7] mb-8 font-light">
-          Un premier échange en visio pour comprendre votre contexte,
-          vos objectifs et identifier le format le plus adapté. Aucun engagement.
+        <p class="ink-soft text-[13px] leading-[1.65] mb-6 font-light grow">
+          Sensibilisation d'une équipe entière aux enjeux de santé mentale.
         </p>
-        <a href="https://calendar.app.google/" target="_blank" rel="noopener" class="btn btn-ghost">
-          Réserver sur Google →
+        <a href="https://calendar.app.google/iwGPBJ9Ezh6nxj3J7" target="_blank" rel="noopener" class="btn btn-ghost self-start">
+          Voir les sessions →
         </a>
       </article>
 
-      <article class="p-8 md:p-10" style="background: var(--mint-soft); border: 1px solid var(--mint)">
-        <div class="flex items-baseline justify-between mb-6 pb-3" style="border-bottom: 1px dotted var(--mint-deep)">
-          <span class="eyebrow" style="color: var(--mint-deep)">Option 02</span>
-          <span class="text-[12px]" style="color: var(--mint-deep)">14 h · 4 demi-journées</span>
+      <article class="p-6 sm:p-8 flex flex-col" style="background: var(--bg); border: 1px solid var(--rule)">
+        <div class="flex items-baseline justify-between mb-6 pb-3 dotted-b gap-3">
+          <span class="eyebrow" style="color:var(--ink)">Cursus complet</span>
+          <span class="text-[12px] ink-mute">14 h · 4 demi-journées</span>
         </div>
-        <h3 class="h3 text-[26px] md:text-[30px] mb-4">
-          Réserver une<br/>
-          <span class="script text-[36px] md:text-[46px]" style="letter-spacing:0">formation.</span>
+        <h3 class="h3 text-[20px] md:text-[24px] mb-4">
+          PSSM<br/>
+          <span class="script text-[28px] md:text-[34px]" style="letter-spacing:0">standard.</span>
         </h3>
-        <p class="ink-soft text-[14px] leading-[1.7] mb-8 font-light">
-          Inscription directe à une session PSSM — présentiel ou distanciel.
-          Sessions inter-entreprises et intra sur demande.
+        <p class="ink-soft text-[13px] leading-[1.65] mb-6 font-light grow">
+          Adultes — dépression, anxiété, crise suicidaire, psychose, addictions.
         </p>
-        <a href="https://calendar.app.google/" target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="https://calendar.app.google/TpedDq7Jvo2M9CZv5" target="_blank" rel="noopener" class="btn btn-ghost self-start">
+          Voir les sessions →
+        </a>
+      </article>
+
+      <article class="p-6 sm:p-8 flex flex-col" style="background: var(--bg); border: 1px solid var(--rule)">
+        <div class="flex items-baseline justify-between mb-6 pb-3 dotted-b gap-3">
+          <span class="eyebrow" style="color:var(--ink)">12 – 25 ans</span>
+          <span class="text-[12px] ink-mute">14 h · 4 demi-journées</span>
+        </div>
+        <h3 class="h3 text-[20px] md:text-[24px] mb-4">
+          PSSM<br/>
+          <span class="script text-[28px] md:text-[34px]" style="letter-spacing:0">jeune.</span>
+        </h3>
+        <p class="ink-soft text-[13px] leading-[1.65] mb-6 font-light grow">
+          Pédagogie adaptée aux réalités scolaires et numériques.
+        </p>
+        <a href="https://calendar.app.google/M2p1a43nTGSeqzR56" target="_blank" rel="noopener" class="btn btn-ghost self-start">
           Voir les sessions →
         </a>
       </article>
@@ -403,54 +345,15 @@
     </div>
     <div class="flex flex-wrap gap-x-6 gap-y-2 pt-4 dotted-t text-[12px] ink-mute">
       <span>© 2022–2026 Santalion</span>
-      <a href="#" class="hover:text-[color:var(--ink)]">Mentions légales</a>
-      <a href="#" class="hover:text-[color:var(--ink)]">CGV</a>
-      <a href="#" class="hover:text-[color:var(--ink)]">Confidentialité</a>
-      <span class="ml-auto">Organisme de formation agréé · PSSM</span>
+      <a href="./mentions-legales.html" class="hover:text-[color:var(--ink)]">Mentions légales</a>
+      <a href="./cgv.html" class="hover:text-[color:var(--ink)]">CGV</a>
+      <a href="./confidentialite.html" class="hover:text-[color:var(--ink)]">Confidentialité</a>
+      <span class="md:ml-auto">Organisme de formation agréé · PSSM</span>
     </div>
   </div>
 </footer>
 
-<script>
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 10);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const href = a.getAttribute('href');
-      if (href.length < 2) return;
-      const target = document.querySelector(href);
-      if (!target) return;
-      e.preventDefault();
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 68, behavior: 'smooth' });
-    });
-  });
-
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const countIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const wrap = e.target;
-      const target = parseInt(wrap.getAttribute('data-target'), 10);
-      const el = wrap.querySelector('[data-counter]');
-      if (!el || isNaN(target)) { countIO.unobserve(wrap); return; }
-      if (prefersReduced) { el.textContent = target.toLocaleString('fr-FR'); countIO.unobserve(wrap); return; }
-      const dur = 1400;
-      const start = performance.now();
-      (function tick(now){
-        const t = Math.min(1, (now - start) / dur);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.floor(eased * target).toLocaleString('fr-FR');
-        if (t < 1) requestAnimationFrame(tick);
-        else el.textContent = target.toLocaleString('fr-FR');
-      })(performance.now());
-      countIO.unobserve(wrap);
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.stat').forEach(s => countIO.observe(s));
-</script>
+<script src="./src/main.js" defer></script>
 
 </body>
 </html>
